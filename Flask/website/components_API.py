@@ -152,8 +152,8 @@ def uploadRatings(Name,Version,ratings,URL,JS = None,trusted = False):
     if trusted:
         try:
             ID = add_package(Name,Version,ratings,URL,JS)
-        except Exception  as e:
-            abort(409, "Package exists already " + str(e))
+        except Exception :
+            abort(409, "Package exists already")
         # ID = add_package(Name,Version,ratings,URL,JS)
         return ID
     else:

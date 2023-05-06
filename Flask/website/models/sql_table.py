@@ -6,17 +6,15 @@ from google.cloud.sql.connector import Connector, IPTypes
 import pymysql
 from google.cloud import storage
 import json
+import os
 
 
 
 def connect_with_connector() -> sqlalchemy.engine.base.Engine:
     instance_connection_name = "fluted-bot-385510:us-central1:module-registry"
-    # db_user = "root"  # e.g. 'my-db-user'
-    # db_pass = ""  # e.g. 'my-db-password'
-    # db_name = "module-registry"  # e.g. 'my-database'
-    db_user = os.environ["DB_USER"]
-    db_pass = os.environ["DB_PASS"]
-    db_name = os.environ["DB_NAME"]
+    db_user = "root"
+    db_pass = ""
+    db_name = "module-registry-db"
 
     ip_type = IPTypes.PUBLIC
 

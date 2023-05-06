@@ -12,12 +12,16 @@ import pymysql
 
 def getconn():
     with Connector() as connector:
+        
+        db_user = "test-npm"
+        db_pass = "npm1234"
+        db_name = "module-registry-db"
         conn = connector.connect(
             "fluted-bot-385510:us-central1:module-registry",
             "pymysql",
-            user="root",
-            password="",
-            db="module-registry",
+            user=db_user,
+            password=db_pass,
+            db=db_name,
             ip_type=IPTypes.PUBLIC
         )
         return conn

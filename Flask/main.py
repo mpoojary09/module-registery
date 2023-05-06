@@ -133,4 +133,11 @@ def handleUploaded():
         abort(501)
     return response.json(), response.status_code
 
-app.run(host="localhost", port=8080, debug=True)
+
+
+from waitress import serve
+
+if __name__ == "__main__":
+    # app.register_blueprint(bp)
+    app.run(host="localhost", port=8080, debug=True)
+    # app.run()
